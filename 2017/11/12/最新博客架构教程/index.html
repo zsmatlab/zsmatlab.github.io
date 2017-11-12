@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="教你 hexo GitHub 个人博客架构郑爽 /编辑在我用hexo+GitHub搭建个人博客时，遇到了好多坑，每个人的教程都是以自己的想法来实现，但是，完全不是完整的教程，经过我两天的研究学习，下面把一个完整的步骤教给大家。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最新博客架构教程">
+<meta property="og:url" content="http://yoursite.com/2017/11/12/最新博客架构教程/index.html">
+<meta property="og:site_name" content="computer vision">
+<meta property="og:description" content="教你 hexo GitHub 个人博客架构郑爽 /编辑在我用hexo+GitHub搭建个人博客时，遇到了好多坑，每个人的教程都是以自己的想法来实现，但是，完全不是完整的教程，经过我两天的研究学习，下面把一个完整的步骤教给大家。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://onpwmp4gz.bkt.clouddn.com/02.png">
+<meta property="og:image" content="http://onpwmp4gz.bkt.clouddn.com/01.png">
+<meta property="og:image" content="http://onpwmp4gz.bkt.clouddn.com/3.png">
+<meta property="og:image" content="http://onpwmp4gz.bkt.clouddn.com/04.png">
+<meta property="og:image" content="http://onpwmp4gz.bkt.clouddn.com/5.png">
+<meta property="og:image" content="http://onpwmp4gz.bkt.clouddn.com/6.png">
+<meta property="og:image" content="http://onpwmp4gz.bkt.clouddn.com/07.png">
+<meta property="og:image" content="http://onpwmp4gz.bkt.clouddn.com/08.png">
+<meta property="og:image" content="http://onpwmp4gz.bkt.clouddn.com/09.png">
+<meta property="og:image" content="http://onpwmp4gz.bkt.clouddn.com/010.png">
+<meta property="og:image" content="http://onpwmp4gz.bkt.clouddn.com/11.png">
+<meta property="og:image" content="http://onpwmp4gz.bkt.clouddn.com/12.png">
+<meta property="og:image" content="http://onpwmp4gz.bkt.clouddn.com/13.png">
+<meta property="og:image" content="http://onpwmp4gz.bkt.clouddn.com/14.png">
+<meta property="og:updated_time" content="2017-11-12T03:40:43.604Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="最新博客架构教程">
+<meta name="twitter:description" content="教你 hexo GitHub 个人博客架构郑爽 /编辑在我用hexo+GitHub搭建个人博客时，遇到了好多坑，每个人的教程都是以自己的想法来实现，但是，完全不是完整的教程，经过我两天的研究学习，下面把一个完整的步骤教给大家。">
+<meta name="twitter:image" content="http://onpwmp4gz.bkt.clouddn.com/02.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/11/12/最新博客架构教程/"/>
+
+
+
+
+
+  <title>最新博客架构教程 | computer vision</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">computer vision</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">matlab 学习。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/12/最新博客架构教程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="郑爽">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="computer vision">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">最新博客架构教程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-12T11:39:37+08:00">
+                2017-11-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="教你-hexo-GitHub-个人博客架构"><a href="#教你-hexo-GitHub-个人博客架构" class="headerlink" title="教你 hexo GitHub 个人博客架构"></a>教你 hexo GitHub 个人博客架构</h1><h4 id="郑爽-编辑"><a href="#郑爽-编辑" class="headerlink" title="郑爽 /编辑"></a>郑爽 /编辑</h4><p>在我用hexo+GitHub搭建个人博客时，遇到了好多坑，每个人的教程都是以自己的想法来实现，但是，完全不是完整的教程，经过我两天的研究学习，下面把一个完整的步骤教给大家。<br>  <a id="more"></a></p>
+<hr>
+<h2 id="确认安装必备插件"><a href="#确认安装必备插件" class="headerlink" title="确认安装必备插件"></a>确认安装必备插件</h2><h4 id="以下两个插件是必须安装的："><a href="#以下两个插件是必须安装的：" class="headerlink" title="以下两个插件是必须安装的："></a>以下两个插件是必须安装的：</h4><h5 id="git"><a href="#git" class="headerlink" title="git"></a><a href="https://git-scm.com/downloads" target="_blank" rel="external">git</a></h5><h5 id="node-js（点击即可进入下载页面）"><a href="#node-js（点击即可进入下载页面）" class="headerlink" title="node.js（点击即可进入下载页面）"></a><a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a>（点击即可进入下载页面）</h5><h3 id="这个是git的下载页面："><a href="#这个是git的下载页面：" class="headerlink" title="这个是git的下载页面："></a>这个是git的下载页面：</h3><p><img src="http://onpwmp4gz.bkt.clouddn.com/02.png" alt="image"></p>
+<h3 id="这个是node-js的下载页面："><a href="#这个是node-js的下载页面：" class="headerlink" title="这个是node.js的下载页面："></a>这个是node.js的下载页面：</h3><p><img src="http://onpwmp4gz.bkt.clouddn.com/01.png" alt="image"></p>
+<h4 id="安装的时候，全程下一步就OK，不需要修改任何选项。"><a href="#安装的时候，全程下一步就OK，不需要修改任何选项。" class="headerlink" title="安装的时候，全程下一步就OK，不需要修改任何选项。"></a>安装的时候，全程下一步就OK，不需要修改任何选项。</h4><h4 id="安装完以上两个必备软件之后，就可以进入正题了。"><a href="#安装完以上两个必备软件之后，就可以进入正题了。" class="headerlink" title="安装完以上两个必备软件之后，就可以进入正题了。"></a>安装完以上两个必备软件之后，就可以进入正题了。</h4><hr>
+<h3 id="接下来就可以去github官网注册你的个人仓库了。"><a href="#接下来就可以去github官网注册你的个人仓库了。" class="headerlink" title="接下来就可以去github官网注册你的个人仓库了。"></a>接下来就可以去<a href="https://github.com/" target="_blank" rel="external">github官网</a>注册你的个人仓库了。</h3><h4 id="进入官网之后，如下界面："><a href="#进入官网之后，如下界面：" class="headerlink" title="进入官网之后，如下界面："></a>进入官网之后，如下界面：</h4><p><img src="http://onpwmp4gz.bkt.clouddn.com/3.png" alt="image"></p>
+<h4 id="注册完之后，我们开始创建仓库。"><a href="#注册完之后，我们开始创建仓库。" class="headerlink" title="注册完之后，我们开始创建仓库。"></a>注册完之后，我们开始创建仓库。</h4><p><img src="http://onpwmp4gz.bkt.clouddn.com/04.png" alt="image"></p>
+<h4 id="仓库具体设置如下："><a href="#仓库具体设置如下：" class="headerlink" title="仓库具体设置如下："></a>仓库具体设置如下：</h4><p><img src="http://onpwmp4gz.bkt.clouddn.com/5.png" alt="image"></p>
+<h4 id="此时，仓库创建完成，你会看到如下界面："><a href="#此时，仓库创建完成，你会看到如下界面：" class="headerlink" title="此时，仓库创建完成，你会看到如下界面："></a>此时，仓库创建完成，你会看到如下界面：</h4><p><img src="http://onpwmp4gz.bkt.clouddn.com/6.png" alt="image"></p>
+<h3 id="好了，到这里，我们的前期工作就基本完成了。接下来我们可以在任意盘符创建一个文件夹，例如我就在D-盘目录下创建了一个叫做blog的文件夹，用来放我的博客所有的本地文件。"><a href="#好了，到这里，我们的前期工作就基本完成了。接下来我们可以在任意盘符创建一个文件夹，例如我就在D-盘目录下创建了一个叫做blog的文件夹，用来放我的博客所有的本地文件。" class="headerlink" title="好了，到这里，我们的前期工作就基本完成了。接下来我们可以在任意盘符创建一个文件夹，例如我就在D:/盘目录下创建了一个叫做blog的文件夹，用来放我的博客所有的本地文件。"></a>好了，到这里，我们的前期工作就基本完成了。接下来我们可以在任意盘符创建一个文件夹，例如我就在D:/盘目录下创建了一个叫做blog的文件夹，用来放我的博客所有的本地文件。</h3><p><img src="http://onpwmp4gz.bkt.clouddn.com/07.png" alt="image"></p>
+<h4 id="然后在blog文件夹上点击右键，选择-Git-Bash-Here"><a href="#然后在blog文件夹上点击右键，选择-Git-Bash-Here" class="headerlink" title="然后在blog文件夹上点击右键，选择 Git Bash Here."></a>然后在blog文件夹上点击右键，选择 Git Bash Here.</h4><p><img src="http://onpwmp4gz.bkt.clouddn.com/08.png" alt="image"></p>
+<h3 id="会出现一个dos操作窗口，此时，在dos窗口里输入一下代码-安装插件）："><a href="#会出现一个dos操作窗口，此时，在dos窗口里输入一下代码-安装插件）：" class="headerlink" title="会出现一个dos操作窗口，此时，在dos窗口里输入一下代码(安装插件）："></a>会出现一个dos操作窗口，此时，在dos窗口里输入一下代码(安装插件）：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h3 id="等安装完之后，在执行以下代码（初始化框架）："><a href="#等安装完之后，在执行以下代码（初始化框架）：" class="headerlink" title="等安装完之后，在执行以下代码（初始化框架）："></a>等安装完之后，在执行以下代码（初始化框架）：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
+<h3 id="最后执行："><a href="#最后执行：" class="headerlink" title="最后执行："></a>最后执行：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h3 id="执行完之后，就可以在blog文件夹下看到如下内容："><a href="#执行完之后，就可以在blog文件夹下看到如下内容：" class="headerlink" title="执行完之后，就可以在blog文件夹下看到如下内容："></a>执行完之后，就可以在blog文件夹下看到如下内容：</h3><p><img src="http://onpwmp4gz.bkt.clouddn.com/09.png" alt="image"></p>
+<h3 id="现在你可以在dos窗口里输入-本地生成-："><a href="#现在你可以在dos窗口里输入-本地生成-：" class="headerlink" title="现在你可以在dos窗口里输入(本地生成)："></a>现在你可以在dos窗口里输入(本地生成)：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<h3 id="再执行（本地预览）："><a href="#再执行（本地预览）：" class="headerlink" title="再执行（本地预览）："></a>再执行（本地预览）：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<h3 id="你就可以看到自己的博客了，不过不要高兴的太早。"><a href="#你就可以看到自己的博客了，不过不要高兴的太早。" class="headerlink" title="你就可以看到自己的博客了，不过不要高兴的太早。"></a>你就可以看到自己的博客了，不过不要高兴的太早。</h3><hr>
+<h2 id="配置SSH密钥"><a href="#配置SSH密钥" class="headerlink" title="配置SSH密钥"></a>配置SSH密钥</h2><ul>
+<li><h3 id="检查电脑是否有ssh-key（输入一下代码）"><a href="#检查电脑是否有ssh-key（输入一下代码）" class="headerlink" title="检查电脑是否有ssh key（输入一下代码）:"></a>检查电脑是否有ssh key（输入一下代码）:</h3></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/. ssh</span><br></pre></td></tr></table></figure>
+<h5 id="如果提示：No-such-file-or-directory-说明你是第一次使用git。"><a href="#如果提示：No-such-file-or-directory-说明你是第一次使用git。" class="headerlink" title="如果提示：No such file or directory 说明你是第一次使用git。"></a>如果提示：No such file or directory 说明你是第一次使用git。</h5><ul>
+<li><h3 id="生成新的ssh-key"><a href="#生成新的ssh-key" class="headerlink" title="生成新的ssh key :"></a>生成新的ssh key :</h3></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;邮件地址@youremail.com&quot;    //注意最后的-C是大写的，邮箱地址填你的邮箱</span><br></pre></td></tr></table></figure>
+<h5 id="然后会有系统提示，不过不不用管，三次回车就好了。出现如下界面就说明ssh-key生成成功了。"><a href="#然后会有系统提示，不过不不用管，三次回车就好了。出现如下界面就说明ssh-key生成成功了。" class="headerlink" title="然后会有系统提示，不过不不用管，三次回车就好了。出现如下界面就说明ssh key生成成功了。"></a>然后会有系统提示，不过不不用管，三次回车就好了。出现如下界面就说明ssh key生成成功了。</h5><p><img src="http://onpwmp4gz.bkt.clouddn.com/010.png" alt="image"></p>
+<ul>
+<li><h3 id="添加ssh-key-到Github"><a href="#添加ssh-key-到Github" class="headerlink" title="添加ssh key 到Github :"></a>添加ssh key 到Github :</h3></li>
+</ul>
+<ol>
+<li>打开本地C:\Documents and Settings\Administrator\ .ssh\id_rsa.pub文件。此文件里面内容为刚才生成的密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。</li>
+<li><p>登陆github系统。点击右上角的 Account Settings—-&gt;SSH Public keys —-&gt; add another public keys</p>
+<p><img src="http://onpwmp4gz.bkt.clouddn.com/11.png" alt="image"><br><img src="http://onpwmp4gz.bkt.clouddn.com/12.png" alt="image"></p>
+</li>
+<li>把你本地生成的密钥复制到里面（key文本框中）， Title可以随便填，点击 add key 就ok了。</li>
+</ol>
+<ul>
+<li><h3 id="测试是否成功"><a href="#测试是否成功" class="headerlink" title="测试是否成功"></a>测试是否成功</h3></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<h6 id="如果提示-Are-you-sure-you-want-to-continue-connecting-yes-no-，输入yes就行了。然后会看到："><a href="#如果提示-Are-you-sure-you-want-to-continue-connecting-yes-no-，输入yes就行了。然后会看到：" class="headerlink" title="如果提示 ==Are you sure you want to continue connecting (yes/no)?==，输入yes就行了。然后会看到："></a>如果提示 ==Are you sure you want to continue connecting (yes/no)?==，输入yes就行了。然后会看到：</h6><table>
+<thead>
+<tr>
+<th>Hi wangwang! You’ve successfully authenticated, but GitHub does not provide shell access.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="看到这个信息说明你的ssh-key-配置成功！"><a href="#看到这个信息说明你的ssh-key-配置成功！" class="headerlink" title="看到这个信息说明你的ssh key 配置成功！"></a>看到这个信息说明你的ssh key 配置成功！</h4><hr>
+<ul>
+<li><h3 id="如果出现超时情况："><a href="#如果出现超时情况：" class="headerlink" title="如果出现超时情况："></a>如果出现超时情况：</h3>ssh: connection to host port: 22: Connection timed out lost connection|</li>
+</ul>
+<hr>
+<h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><p> 在你的.ssh 文件夹内，新建一个叫 ==config== 的文本文档，将后缀 .txt 删掉，即后缀为空。文档内容填：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">   Hostname ssh.github.com</span><br><span class="line">   Port 443</span><br></pre></td></tr></table></figure>
+<h3 id="保存即可。如果没有遇到超时情况，请忽略此步骤。"><a href="#保存即可。如果没有遇到超时情况，请忽略此步骤。" class="headerlink" title="保存即可。如果没有遇到超时情况，请忽略此步骤。"></a>保存即可。如果没有遇到超时情况，请忽略此步骤。</h3><hr>
+<h2 id="设置用户信息"><a href="#设置用户信息" class="headerlink" title="设置用户信息"></a>设置用户信息</h2><p>现在你已经可以通过SSH链接到GitHub了，还有一些个人信息需要完善的。<br>Git会根据用户的名字和邮箱来记录提交。GitHub也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的，名字必须是你的真名，而不是GitHub的昵称。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;cnfeat&quot;   //填写你的用户名</span><br><span class="line">$ git config --global user.email  &quot;cnfeat@gmail.com&quot;    //填写你的邮箱</span><br></pre></td></tr></table></figure>
+<p>这两步不会有消息提示，不用担心。</p>
+<h2 id="配置本地hexo-deploy-文件内容："><a href="#配置本地hexo-deploy-文件内容：" class="headerlink" title="配置本地hexo deploy 文件内容："></a>配置本地hexo deploy 文件内容：</h2><p>进入你的blog文件夹内，找到_config.yml文件，打开（可以用<a href="http://www.sublimetext.com/" target="_blank" rel="external">sublime text</a>这个软件打开）。<br><img src="http://onpwmp4gz.bkt.clouddn.com/13.png" alt="image"></p>
+<p>找到deploy字段，在文档最下面，然后修改内容如下：</p>
+<p><img src="http://onpwmp4gz.bkt.clouddn.com/14.png" alt="image"></p>
+<p><strong>++一定注意冒号后面有空格，不然设置是无效的。++</strong></p>
+<hr>
+<h2 id="部署博客到服务器"><a href="#部署博客到服务器" class="headerlink" title="部署博客到服务器"></a>部署博客到服务器</h2><h4 id="执行如下代码部署到服务器："><a href="#执行如下代码部署到服务器：" class="headerlink" title="执行如下代码部署到服务器："></a>执行如下代码部署到服务器：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g -d   //本地生成文件，并部署到服务器。</span><br></pre></td></tr></table></figure>
+<p>这时，我就可以用 wangwang.github.io看到我的博客了。</p>
+<ul>
+<li><h3 id="如果出现报错："><a href="#如果出现报错：" class="headerlink" title="如果出现报错："></a>如果出现报错：</h3><h2 id="ERROR-Deployer-not-found-git-或者-ERROR-Deployer-not-found-github"><a href="#ERROR-Deployer-not-found-git-或者-ERROR-Deployer-not-found-github" class="headerlink" title="ERROR Deployer not found: git 或者 ERROR Deployer not found: github|"></a>ERROR Deployer not found: git 或者 ERROR Deployer not found: github|</h2></li>
+</ul>
+<p>我们可以用下面的方法解决这个问题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save    //安装git部署插件</span><br></pre></td></tr></table></figure>
+<p>再部署的时候，就可以直接部署到服务器了。</p>
+<hr>
+<h4 id="以上为博主原创教程，如有问题，可以给我留言。"><a href="#以上为博主原创教程，如有问题，可以给我留言。" class="headerlink" title="以上为博主原创教程，如有问题，可以给我留言。"></a>以上为博主原创教程，如有问题，可以给我留言。</h4><h4 id="转载请说明出处。"><a href="#转载请说明出处。" class="headerlink" title="转载请说明出处。"></a>转载请说明出处。</h4>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">郑爽</p>
+              <p class="site-description motion-element" itemprop="description">matlab 学习。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#教你-hexo-GitHub-个人博客架构"><span class="nav-number">1.</span> <span class="nav-text">教你 hexo GitHub 个人博客架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#郑爽-编辑"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">郑爽 /编辑</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#确认安装必备插件"><span class="nav-number">1.1.</span> <span class="nav-text">确认安装必备插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#以下两个插件是必须安装的："><span class="nav-number">1.1.0.1.</span> <span class="nav-text">以下两个插件是必须安装的：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#git"><span class="nav-number">1.1.0.1.1.</span> <span class="nav-text">git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#node-js（点击即可进入下载页面）"><span class="nav-number">1.1.0.1.2.</span> <span class="nav-text">node.js（点击即可进入下载页面）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这个是git的下载页面："><span class="nav-number">1.1.1.</span> <span class="nav-text">这个是git的下载页面：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这个是node-js的下载页面："><span class="nav-number">1.1.2.</span> <span class="nav-text">这个是node.js的下载页面：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装的时候，全程下一步就OK，不需要修改任何选项。"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">安装的时候，全程下一步就OK，不需要修改任何选项。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装完以上两个必备软件之后，就可以进入正题了。"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">安装完以上两个必备软件之后，就可以进入正题了。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接下来就可以去github官网注册你的个人仓库了。"><span class="nav-number">1.1.3.</span> <span class="nav-text">接下来就可以去github官网注册你的个人仓库了。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进入官网之后，如下界面："><span class="nav-number">1.1.3.1.</span> <span class="nav-text">进入官网之后，如下界面：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注册完之后，我们开始创建仓库。"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">注册完之后，我们开始创建仓库。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#仓库具体设置如下："><span class="nav-number">1.1.3.3.</span> <span class="nav-text">仓库具体设置如下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#此时，仓库创建完成，你会看到如下界面："><span class="nav-number">1.1.3.4.</span> <span class="nav-text">此时，仓库创建完成，你会看到如下界面：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#好了，到这里，我们的前期工作就基本完成了。接下来我们可以在任意盘符创建一个文件夹，例如我就在D-盘目录下创建了一个叫做blog的文件夹，用来放我的博客所有的本地文件。"><span class="nav-number">1.1.4.</span> <span class="nav-text">好了，到这里，我们的前期工作就基本完成了。接下来我们可以在任意盘符创建一个文件夹，例如我就在D:/盘目录下创建了一个叫做blog的文件夹，用来放我的博客所有的本地文件。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#然后在blog文件夹上点击右键，选择-Git-Bash-Here"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">然后在blog文件夹上点击右键，选择 Git Bash Here.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#会出现一个dos操作窗口，此时，在dos窗口里输入一下代码-安装插件）："><span class="nav-number">1.1.5.</span> <span class="nav-text">会出现一个dos操作窗口，此时，在dos窗口里输入一下代码(安装插件）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#等安装完之后，在执行以下代码（初始化框架）："><span class="nav-number">1.1.6.</span> <span class="nav-text">等安装完之后，在执行以下代码（初始化框架）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后执行："><span class="nav-number">1.1.7.</span> <span class="nav-text">最后执行：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行完之后，就可以在blog文件夹下看到如下内容："><span class="nav-number">1.1.8.</span> <span class="nav-text">执行完之后，就可以在blog文件夹下看到如下内容：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#现在你可以在dos窗口里输入-本地生成-："><span class="nav-number">1.1.9.</span> <span class="nav-text">现在你可以在dos窗口里输入(本地生成)：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再执行（本地预览）："><span class="nav-number">1.1.10.</span> <span class="nav-text">再执行（本地预览）：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#你就可以看到自己的博客了，不过不要高兴的太早。"><span class="nav-number">1.1.11.</span> <span class="nav-text">你就可以看到自己的博客了，不过不要高兴的太早。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置SSH密钥"><span class="nav-number">1.2.</span> <span class="nav-text">配置SSH密钥</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#检查电脑是否有ssh-key（输入一下代码）"><span class="nav-number">1.2.1.</span> <span class="nav-text">检查电脑是否有ssh key（输入一下代码）:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#如果提示：No-such-file-or-directory-说明你是第一次使用git。"><span class="nav-number">1.2.1.0.1.</span> <span class="nav-text">如果提示：No such file or directory 说明你是第一次使用git。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成新的ssh-key"><span class="nav-number">1.2.2.</span> <span class="nav-text">生成新的ssh key :</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#然后会有系统提示，不过不不用管，三次回车就好了。出现如下界面就说明ssh-key生成成功了。"><span class="nav-number">1.2.2.0.1.</span> <span class="nav-text">然后会有系统提示，不过不不用管，三次回车就好了。出现如下界面就说明ssh key生成成功了。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加ssh-key-到Github"><span class="nav-number">1.2.3.</span> <span class="nav-text">添加ssh key 到Github :</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试是否成功"><span class="nav-number">1.2.4.</span> <span class="nav-text">测试是否成功</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#如果提示-Are-you-sure-you-want-to-continue-connecting-yes-no-，输入yes就行了。然后会看到："><span class="nav-number">1.2.4.0.0.1.</span> <span class="nav-text">如果提示 ==Are you sure you want to continue connecting (yes/no)?==，输入yes就行了。然后会看到：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#看到这个信息说明你的ssh-key-配置成功！"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">看到这个信息说明你的ssh key 配置成功！</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如果出现超时情况："><span class="nav-number">1.2.5.</span> <span class="nav-text">如果出现超时情况：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方法："><span class="nav-number">1.2.5.1.</span> <span class="nav-text">解决方法：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保存即可。如果没有遇到超时情况，请忽略此步骤。"><span class="nav-number">1.2.6.</span> <span class="nav-text">保存即可。如果没有遇到超时情况，请忽略此步骤。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置用户信息"><span class="nav-number">1.3.</span> <span class="nav-text">设置用户信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置本地hexo-deploy-文件内容："><span class="nav-number">1.4.</span> <span class="nav-text">配置本地hexo deploy 文件内容：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署博客到服务器"><span class="nav-number">1.5.</span> <span class="nav-text">部署博客到服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#执行如下代码部署到服务器："><span class="nav-number">1.5.0.1.</span> <span class="nav-text">执行如下代码部署到服务器：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如果出现报错："><span class="nav-number">1.5.1.</span> <span class="nav-text">如果出现报错：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ERROR-Deployer-not-found-git-或者-ERROR-Deployer-not-found-github"><span class="nav-number">1.6.</span> <span class="nav-text">ERROR Deployer not found: git 或者 ERROR Deployer not found: github|</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#以上为博主原创教程，如有问题，可以给我留言。"><span class="nav-number">1.6.0.1.</span> <span class="nav-text">以上为博主原创教程，如有问题，可以给我留言。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转载请说明出处。"><span class="nav-number">1.6.0.2.</span> <span class="nav-text">转载请说明出处。</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">郑爽</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v="></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v="></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v="></script>
+<script type="text/javascript" src="/js/src/post-details.js?v="></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v="></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
