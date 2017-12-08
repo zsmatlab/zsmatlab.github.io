@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="computer vision">
 <meta property="og:description" content="最近一直在学习基于matlab的图像处理（车牌识别方面），也遇到了各种各样的问题，反复测试，反复修改，也明白了一些函数的大概用法，于是记录下来与大家一起共同学习，共同探讨。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ozalho4ed.bkt.clouddn.com/cell6.png">
+<meta property="og:image" content="http://ozalho4ed.bkt.clouddn.com/cell6.jpg">
 <meta property="og:image" content="http://ozalho4ed.bkt.clouddn.com/se7.png">
 <meta property="og:image" content="http://ozalho4ed.bkt.clouddn.com/se14.png">
 <meta property="og:image" content="http://ozalho4ed.bkt.clouddn.com/se7edge.png">
@@ -100,11 +100,11 @@
 <meta property="og:image" content="http://ozalho4ed.bkt.clouddn.com/carNum.png">
 <meta property="og:image" content="http://ozalho4ed.bkt.clouddn.com/num.png">
 <meta property="og:image" content="http://ozalho4ed.bkt.clouddn.com/result.png">
-<meta property="og:updated_time" content="2017-12-08T03:43:09.963Z">
+<meta property="og:updated_time" content="2017-12-08T03:53:17.958Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="车牌识别的理解（matlab）">
 <meta name="twitter:description" content="最近一直在学习基于matlab的图像处理（车牌识别方面），也遇到了各种各样的问题，反复测试，反复修改，也明白了一些函数的大概用法，于是记录下来与大家一起共同学习，共同探讨。">
-<meta name="twitter:image" content="http://ozalho4ed.bkt.clouddn.com/cell6.png">
+<meta name="twitter:image" content="http://ozalho4ed.bkt.clouddn.com/cell6.jpg">
 
 
 
@@ -319,7 +319,7 @@
       
 
       
-        <p>最近一直在学习基于matlab的图像处理（车牌识别方面），也遇到了各种各样的问题，反复测试，反复修改，也明白了一些函数的大概用法，于是记录下来与大家一起共同学习，共同探讨。<br><img src="http://ozalho4ed.bkt.clouddn.com/cell6.png" alt="image"><br><a id="more"></a></p>
+        <p>最近一直在学习基于matlab的图像处理（车牌识别方面），也遇到了各种各样的问题，反复测试，反复修改，也明白了一些函数的大概用法，于是记录下来与大家一起共同学习，共同探讨。<br><img src="http://ozalho4ed.bkt.clouddn.com/cell6.jpg" alt="image"><br><a id="more"></a></p>
 <p>众所周知，车牌识别中，大概步骤就是把车牌从整张图片中拿出来，再把每个字符提取出来，通过自定义匹配库或者BP神经网络来识别成文字，输出出来。因此，第一步，怎么把车牌从图片中提取出来，就是一个很重要的问题。</p>
 <p>1.利用matlab读取一张待识别的图片（一般为彩色图，rgb模式），先变成灰度图，再对灰度图进行去背景。我遇到的第一个问题就是去背景问题，总是达不到满意状态。</p>
 <p>在matlab中，提供了一个函数叫<code>imtophat</code>,中文名称为“顶帽操作”，官方解释为：IM2 = imtophat(IM,SE)对灰度或二进制输入图像执行形态学顶帽过滤IM。顶帽过滤计算图像的形态打开（使用imopen），然后从原始图像中减去结果。imtophat使用结构化元素SE，其中SE由strel返回。 SE必须是单个结构化元素对象，而不是包含多个结构化元素对象的数组。我对这个函数的理解是把图像中暗的地方和灰的地方全部变暗，类似于增强对比度。一般情况下，车牌号码的数字是比较亮的，其他部分会相对于车牌号码的部分稍微暗一点，因此，顶帽操作之后，会把除了车牌号码部分以外的部分变的相对暗一点。其中，SE的值越小，变暗的效果就越强。这一步直接影响了下一步的边缘检测，图像中不感兴趣的区域越大，边缘检测之后就会很多噪声，很难处理。</p>
