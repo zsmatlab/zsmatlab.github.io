@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>写给猪猪琪</title>
+  <style>
+	*{margin:0px;padding:0px;}
+	/*.text{width:500px;margin:30px auto;color:white;}*/
+	.text{width: device-width;margin: 50px 20px;color: white;}
+	body{background:#c6f;}
+	/*p{text-indent: 24px;}*/
+	p{font-size: 18px;display: block;margin: 20px;white-space: pre-line;}
+ </style>
+	<script>
+function text(str){
+   var arr=[];
+   var text=document.getElementsByClassName("text")[0];
+   for(var i=0;i<str.length;i++){arr[i]=str[i];}
+   var p=document.getElementById("sp1");
+   var sp2=document.getElementById("sp2");
+   setInterval(function(){sp2.style.display="none";setTimeout("sp2.style.display='inline'",500);},700);
+   var index=0;
+   var obj=setInterval(function(){
+	   if(index<arr.length){
+	   var text=document.createTextNode(arr[index]);
+	   }
+	   p.appendChild(text);
+	   index++;
+	   },400);
+	   
+}
+window.onload=function(){
+  text("写给猪猪琪：\n岁月静好，红尘安然，好想你能赐我一场盛大的邂逅，以你明净的眸，给我一汪深情的凝视，不求地老天荒，只为，你涉水而来的一声呼唤，和那脉脉不得语的怦然心动。\n                                                             你的猪猪");  
+}
+</script>
+ </head>
+ <body>
+  <div class="text pre"><p id="ptext"><span id="sp1"></span><span id="sp2">_</span></p></div>
+ </body>
+</html>
