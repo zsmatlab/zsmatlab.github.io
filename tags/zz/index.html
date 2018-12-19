@@ -35,12 +35,18 @@ function type(){
 window.onload=function(){
     word=document.getElementById("w").innerHTML;
     setInterval(type, 400);
+
 }
 </script>
 </head>
 <body>
 <pre id="aa" class="saying" style="background-color: none;width: auto;height: 200px;padding: 20px;font-family: 幼圆" ></pre>
 <div>
+	  	<audio controls="controls" autoplay="autoplay">
+  <source src="song.ogg" type="audio/ogg" />
+  <source src="2.mp3" type="audio/mpeg" />
+Your browser does not support the audio element.
+</audio>
 	<p id="w" style="display:none;">写给猪猪琪：
   你，给我的感觉很奇妙，
   像晨间的风，
