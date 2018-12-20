@@ -4,7 +4,7 @@ var S = {
     document.body.classList.add('body--ready');
     //鎯宠鐨勮瘽
     var day = show_date_time()
-    S.UI.simulate("猪猪琪小朋友|I am|lucky|to|meet|you!|" + day + "|希望余生全是你！");
+    S.UI.simulate("乔治小朋友|I am|lucky|to|meet|you!|" + day + "|I hope|the|rest|of|my|life|will|be|yours.！");
     S.Drawing.loop(function () {
       S.Shape.render();
     });
@@ -141,7 +141,7 @@ S.UI = (function () {
 
           timedAction(function (index) {
             if (index === 0) {
-              console.log('index 涓�0')
+            
               if (sequence.length === 0) {
                 S.Shape.switchShape(S.ShapeBuilder.letter(''));
                 // 闅愯棌 canvas
@@ -149,7 +149,7 @@ S.UI = (function () {
                 performAction(sequence);
               }
             } else {
-              // console.log('濡傛灉 index 涓�0')
+              
               S.Shape.switchShape(S.ShapeBuilder.letter(index), true);
             }
           }, 1000, value, true);
