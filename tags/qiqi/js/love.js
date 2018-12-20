@@ -4,7 +4,7 @@ var S = {
     document.body.classList.add('body--ready');
     //鎯宠鐨勮瘽
     var day = show_date_time()
-    S.UI.simulate("孟珂小朋友|I am|lucky|to|meet|you!|" + day + "|天天开心！");
+    S.UI.simulate("猪猪琪小朋友|I am|lucky|to|meet|you!|" + day + "|希望余生全是你！");
     S.Drawing.loop(function () {
       S.Shape.render();
     });
@@ -12,7 +12,7 @@ var S = {
 };
 
 function show_date_time() {
-  BirthDay = new Date("2/15/2017 00:00:00");//杩欎釜鏃ユ湡鏄彲浠ヤ慨鏀圭殑
+  BirthDay = new Date("11/11/2018 22:10:00");//杩欎釜鏃ユ湡鏄彲浠ヤ慨鏀圭殑
   today = new Date();
   timeold = (today.getTime() - BirthDay.getTime());
   sectimeold = timeold / 1000
