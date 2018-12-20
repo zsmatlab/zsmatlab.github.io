@@ -4,7 +4,7 @@ var S = {
     document.body.classList.add('body--ready');
     //鎯宠鐨勮瘽
     var day = show_date_time()
-    S.UI.simulate("乔治小朋友|I am|lucky|to|meet|you!|" + day + "|I hope|the|rest|of|my|life|will|be|yours.！");
+    S.UI.simulate("乔治小朋友|I am|lucky|to |meet|you!|" + day + "|I hope|the|rest|of|my|life|will|be|yours！" + today.getTime());
     S.Drawing.loop(function () {
       S.Shape.render();
     });
