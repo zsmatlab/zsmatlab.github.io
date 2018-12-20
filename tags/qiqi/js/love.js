@@ -4,18 +4,19 @@ var S = {
     document.body.classList.add('body--ready');
     //鎯宠鐨勮瘽
     var day = show_date_time()
-    d = new Date();
-  year = d.getFullYear();
-  month = d.getMonth() + 1;
-  strDate = d.getDate();
-    if (month >= 1 && month <= 9) {
-        month = "0" + month;
-    }
-    if (strDate >= 0 && strDate <= 9) {
-        strDate = "0" + strDate;
-    }
-    dt = year +" " + month + " " + strDate;
-    S.UI.simulate("乔治小朋友|I am|lucky|to |meet|you!|" + day + "|I hope|the|rest|of|my|life|will|be|yours！|" + dt);
+    // console.log(day[0],day[1])
+  //   d = new Date();
+  // year = d.getFullYear();
+  // month = d.getMonth() + 1;
+  // strDate = d.getDate();
+  //   if (month >= 1 && month <= 9) {
+  //       month = "0" + month;
+  //   }
+  //   if (strDate >= 0 && strDate <= 9) {
+  //       strDate = "0" + strDate;
+  //   }
+  //   dt = year +" " + month + " " + strDate;
+    S.UI.simulate("乔治小朋友|I am|lucky|to |meet|you!|" + day[0] + "|Hope|the|rest|of|my|life|will|be|you！|"+ day[1]);
     S.Drawing.loop(function () {
       S.Shape.render();
     });
@@ -31,11 +32,19 @@ function show_date_time() {
   msPerDay = 24 * 60 * 60 * 1000
   e_daysold = timeold / msPerDay
   daysold = Math.floor(e_daysold);
-  return daysold + "days"
+  year = today.getFullYear();
+  month = today.getMonth() + 1;
+  strDate = today.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    dt = year +" " + month + " " + strDate;
+  return [daysold + "days", dt]
+  // day = daysold + "days"
 }
-
-  
-
     // console.log(dt)
 
 S.Drawing = (function () {
@@ -118,7 +127,7 @@ S.UI = (function () {
 
   function timedAction(fn, delay, max, reverse) {
     clearInterval(interval);
-    console.log('max', max)
+    
     currentAction = reverse ? max : 1;
     fn(currentAction);
 
@@ -200,8 +209,8 @@ S.UI = (function () {
           break;
 
         default: {
-          console.log('se', current)
-          console.log('canvas ', document.querySelector('.canvas'))
+          // console.log('se', current)
+          // console.log('canvas ', document.querySelector('.canvas'))
           // if (current === ' ') {
           //   setTimeout(function () {
           //     document.querySelector('.canvas').style = "display: none"
@@ -210,7 +219,7 @@ S.UI = (function () {
           S.Shape.switchShape(S.ShapeBuilder.letter(current[0] === cmd ? 'HacPai' : current)); // 灞曠ず瀛楃
         }
       }
-    }, 2000, sequence.length);
+    }, 3000, sequence.length);
   }
 
   return {
