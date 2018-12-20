@@ -16,7 +16,7 @@ var S = {
   //       strDate = "0" + strDate;
   //   }
   //   dt = year +" " + month + " " + strDate;
-    S.UI.simulate("猪猪琪小朋友|I am|lucky|to |meet|you!|" + day[0] + "|Hope|the|rest|of|my|life|will|be|you！|"+ day[1]);
+    S.UI.simulate("乔治小朋友|I am|lucky|to |meet|you!|" + day[0] + "|Hope|the|rest|of|my|life|will|be|you！|"+ day[1]);
     S.Drawing.loop(function () {
       S.Shape.render();
     });
@@ -363,7 +363,7 @@ S.ShapeBuilder = (function () {
     shapeCanvas = document.createElement('canvas'),
     shapeContext = shapeCanvas.getContext('2d'),
     fontSize = 500,
-    fontFamily = 'Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif';
+    fontFamily = 'Arial,Verdana,Sans-serif';
 
   function fit() {
     shapeCanvas.width = Math.floor(window.innerWidth / gap) * gap;
