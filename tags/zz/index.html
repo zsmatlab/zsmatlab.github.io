@@ -32,9 +32,20 @@ function type(){
         typePanel.className = "saying";
     }
 }
+document.addEventListener('DOMContentLoaded', function () {
+function audioAutoPlay() {
+    var audio = document.getElementById('audio');
+    audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {
+    audio.play();
+       }, false);
+    }
+    audioAutoPlay();
+});
 window.onload=function(){
     word=document.getElementById("w").innerHTML;
     setInterval(type, 400);
+
 
 }
 </script>
