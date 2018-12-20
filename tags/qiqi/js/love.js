@@ -16,7 +16,7 @@ var S = {
   //       strDate = "0" + strDate;
   //   }
   //   dt = year +" " + month + " " + strDate;
-    S.UI.simulate("乔治小朋友|I am|lucky|to |meet|you!|" + day[0] + "|Hope|the|rest|of|my|life|will|be|you！|"+ day[1]);
+    S.UI.simulate("猪猪琪小朋友|I am|lucky|to |meet|you!|" + day[0] + "|Hope|the|rest|of|my|life|will|be|you！|"+ day[1]);
     S.Drawing.loop(function () {
       S.Shape.render();
     });
@@ -219,7 +219,7 @@ S.UI = (function () {
           S.Shape.switchShape(S.ShapeBuilder.letter(current[0] === cmd ? 'HacPai' : current)); // 灞曠ず瀛楃
         }
       }
-    }, 3000, sequence.length);
+    }, 2500, sequence.length);
   }
 
   return {
@@ -363,7 +363,7 @@ S.ShapeBuilder = (function () {
     shapeCanvas = document.createElement('canvas'),
     shapeContext = shapeCanvas.getContext('2d'),
     fontSize = 500,
-    fontFamily = 'Avenir, Helvetica Neue, Helvetica, Arial, sans-serif';
+    fontFamily = 'Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif';
 
   function fit() {
     shapeCanvas.width = Math.floor(window.innerWidth / gap) * gap;
