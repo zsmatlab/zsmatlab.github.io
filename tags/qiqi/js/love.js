@@ -4,7 +4,18 @@ var S = {
     document.body.classList.add('body--ready');
     //鎯宠鐨勮瘽
     var day = show_date_time()
-    S.UI.simulate("乔治小朋友|I am|lucky|to |meet|you!|" + day + "|I hope|the|rest|of|my|life|will|be|yours！" + today.getTime());
+    d = new Date();
+  year = d.getFullYear();
+  month = d.getMonth() + 1;
+  strDate = d.getDate();
+    if (month >= 1 && month <= 9) {
+        month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+    }
+    dt = year +" " + month + " " + strDate;
+    S.UI.simulate("乔治小朋友|I am|lucky|to |meet|you!|" + day + "|I hope|the|rest|of|my|life|will|be|yours！|" + dt);
     S.Drawing.loop(function () {
       S.Shape.render();
     });
@@ -22,6 +33,10 @@ function show_date_time() {
   daysold = Math.floor(e_daysold);
   return daysold + "days"
 }
+
+  
+
+    // console.log(dt)
 
 S.Drawing = (function () {
   var canvas,
