@@ -40,9 +40,10 @@ function audioAutoPlay() {
     audio.play();
        }, false);
     }
-    audioAutoPlay();
+    
 });
 window.onload=function(){
+	audioAutoPlay();
     word=document.getElementById("w").innerHTML;
     setInterval(type, 400);
 
